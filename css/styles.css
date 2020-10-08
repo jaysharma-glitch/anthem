@@ -10,6 +10,7 @@ body {
   background-color: #fff;
   z-index: -2;
   color: #244c54;
+  font-family: "Work Sans", sans-serif;
 }
 
 /*Navbar */
@@ -33,6 +34,7 @@ body {
 .nav-link {
   position: relative;
   top: 30px;
+  font-weight: 500;
 }
 .navbar-brand {
   margin-right: 400px;
@@ -92,6 +94,7 @@ body {
 .quote {
   margin-top: 170px;
   padding-left: 20px;
+  font-family: "Courgette", cursive;
 }
 
 /*Homepage*/
@@ -353,6 +356,7 @@ body {
 }
 .right-box h1 {
   text-align: center;
+  font-weight: 500;
 }
 @media screen and (max-width: 1130px) {
   .right-box {
@@ -551,8 +555,12 @@ hr {
   margin-right: 30px;
 }
 
-.about-content h1,
-p {
+.about-content p {
+  opacity: 100%;
+}
+
+.about-content h3 {
+  font-weight: 500;
   opacity: 100%;
 }
 
@@ -736,6 +744,7 @@ input[type="submit"]:hover {
   margin-left: 10px;
 }
 .contact-content h4 {
+  font-weight: 500;
   text-align: center;
   margin-bottom: 50px;
 }
