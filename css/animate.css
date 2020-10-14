@@ -1,0 +1,159 @@
+@import "compass/css3";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.logos {
+  position: absolute;
+  z-index: 999;
+  left: 50%;
+  top: 25%;
+  margin-left: -150px;
+}
+
+img {
+  width: 300px;
+  display: block;
+  margin: 0 auto;
+}
+
+.btn {
+  margin-top: 10px;
+  margin-left: 18%;
+  color: #fff;
+  background-color: #244c54;
+}
+
+.btn:hover {
+  color: #000;
+  background-color: #fff;
+  font-weight: bold;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  overflow: hidden;
+  background-color: #fdf4e3;
+  &:hover {
+    span {
+      display: none;
+    }
+  }
+}
+
+canvas {
+  cursor: url("../images/pen.ico"), crosshair;
+}
+
+span {
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  line-height: 1;
+  position: fixed;
+  top: 10%;
+  left: 42%;
+  color: #3c3431;
+  margin-top: -40px;
+  margin-left: -200px;
+}
+
+span h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #000;
+}
+
+@media screen and (max-width: 877px) {
+  span {
+    left: 40%;
+  }
+}
+@media screen and (max-width: 830px) {
+  span {
+    left: 37%;
+  }
+  .logo {
+    left: 35;
+  }
+}
+@media screen and (max-width: 730px) {
+  span {
+    left: 35%;
+  }
+}
+@media screen and (max-width: 675px) {
+  span {
+    left: 33%;
+  }
+  img {
+    width: 200px;
+  }
+  .logos {
+    top: 30%;
+    margin-left: -100px;
+  }
+  .btn {
+    margin-left: unset;
+  }
+}
+@media screen and (max-width: 600px) {
+  span {
+    left: 40%;
+  }
+}
+@media screen and (max-width: 460px) {
+  span {
+    left: 45%;
+  }
+}
+@media screen and (max-width: 425px) {
+  span {
+    left: 45%;
+  }
+}
+@media screen and (max-width: 407px) {
+  span {
+    left: 48%;
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 378px) {
+  span {
+    left: 50%;
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 363px) {
+  span {
+    left: 55%;
+    font-size: 15px;
+  }
+  span h2 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 318px) {
+  span {
+    left: 65%;
+    font-size: 15px;
+  }
+  span h2 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 296px) {
+  span {
+    left: 75%;
+    font-size: 15px;
+  }
+  span h2 {
+    font-size: 1.5rem;
+  }
+}

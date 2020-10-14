@@ -7,7 +7,7 @@ $(".chat-input input").keyup(function (e) {
 
 $(document).ready(function () {
   // Add smooth scrolling to all links
-  $(".nav-item a").on("click", function (event) {
+  $(".nav-item a, .chat-input a").on("click", function (event) {
     // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== "") {
       // Prevent default anchor click behavior
@@ -31,3 +31,15 @@ $(document).ready(function () {
     } // End if
   });
 });
+
+
+
+// for iinput 
+
+$("#main-email").keyup(function(){
+  update();
+});
+
+function update() {
+$("#email").val($('#main-email').val());
+}

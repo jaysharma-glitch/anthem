@@ -394,11 +394,22 @@ hr {
   overflow: auto;
 }
 .chat-input {
-  flex: 0 0 auto;
-  height: 60px;
+  /* flex: 0 0 auto;
+  height: 60px; */
   /*background: #40434e;
     border-top: 1px solid #2671ff;
     box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);*/
+  position: relative;
+}
+.fa-share-square {
+  font-size: 2rem;
+}
+.chat-input a {
+  color: #244c54;
+  display: inline-block;
+  position: absolute;
+  right: 15px;
+  top: 10px;
 }
 .chat-input input {
   height: 59px;
