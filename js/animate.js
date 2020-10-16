@@ -161,3 +161,4 @@ function handleClearButtonClick(event) {
 
 
 init();
+
