@@ -15,6 +15,13 @@ function init() {
   context = canvas.getContext( '2d' );
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
+
+
+// Clear Button
+
+const clearButton = document.getElementById('clear-button');
+
+  // Event listeners - Mouse Events 
  
   canvas.addEventListener('mousemove', mouseMove, false);
   canvas.addEventListener('mousedown', mouseDown, false);
@@ -22,9 +29,17 @@ function init() {
   canvas.addEventListener('mouseout',  mouseUp,  false);  
   canvas.addEventListener('dblclick', doubleClick, false);
 
-  canvas.addEventListener('touchstart', sketchpad_touchStart, false);
-  canvas.addEventListener('touchmove', sketchpad_touchMove, false);
-  canvas.addEventListener('touchend', sketchpad_touchEnd, false);
+// Event Listeners - Touch Events 
+  
+  canvas.addEventListener('touchstart', mouseDown);
+  canvas.addEventListener('touchmove', mouseMove);
+  canvas.addEventListener('touchend', mouseUp);
+  
+
+  // Button 
+
+clearButton.addEventListener('click', handleClearButtonClick);
+
   
  
   window.onresize = function(event) {
@@ -33,55 +48,7 @@ function init() {
   }
 }
 
-var touchX,touchY;
 
-function sketchpad_touchStart(event) {
-    getTouchPos();
-    drawM();
-  //   position.x = event.pageX;
-  // position.y = event.pageY;
-    mouse.down = true;
-    
-   
-    document.getElementById('info').style.display = 'none';
-
-    // Prevents an additional mousedown event being triggered
-    event.preventDefault();
-}
-
-function sketchpad_touchMove(e) { 
-    // Update the touch co-ordinates
-    // mouse.x = e.pageX;
-    // mouse.y = e.pageY;
-    getTouchPos(e);
-
-    // During a touchmove event, unlike a mousemove event, we don't need to check if the touch is engaged, since there will always be contact with the screen by definition.
-    drawM(); 
-
-    // Prevent a scrolling action as a result of this touchmove triggering.
-    e.preventDefault();
-}
-
-function sketchpad_touchEnd(e) {
-  mouse.down = false;
-}
-
-// Get the touch position relative to the top-left of the canvas
-// When we get the raw values of pageX and pageY below, they take into account the scrolling on the page
-// but not the position relative to our target div. We'll adjust them using "target.offsetLeft" and
-// "target.offsetTop" to get the correct values in relation to the top left of the canvas.
-function getTouchPos(e) {
-    if (!e)
-        var e = event;
-
-    if (e.touches) {
-        if (e.touches.length == 1) { // Only deal with one finger
-            var touch = e.touches[0]; // Get the information for finger #1
-            touchX=touch.pageX-touch.target.offsetLeft;
-            touchY=touch.pageY-touch.target.offsetTop;
-        }
-    }
-}
 
 
 
@@ -91,8 +58,10 @@ function getTouchPos(e) {
 
 function mouseMove ( event ){
 
-  mouse.x = event.pageX;
-  mouse.y = event.pageY;
+  event.preventDefault();   //New Code
+
+  mouse.x = event.pageX || event.touches[0].pageX;
+  mouse.y = event.pageY || event.touches[0].pageY;
   draw();
 }
 
@@ -130,38 +99,6 @@ function draw() {
 }
 
 
-function drawM() {
-  if ( mouse.down ) {
-  
-     var d = distance( position, mouse );
-     var fontSize = minFontSize + d/4;
-     var letter = letters[counter];
-     var stepSize = textWidth( letter, fontSize );
-    
-     if (d > stepSize) {
-       var angle = Math.atan2(mouse.y-position.y, mouse.x-position.x);
-      
-       context.font = fontSize + "px Great Vibes";
-    
-       context.save();
-       context.translate( position.x, position.y);
-       context.rotate( angle );
-       context.fillText(letter,0,0);
-       context.restore();
- 
-       counter++;
-       if (counter > letters.length-1) {
-         counter = 0;
-       }
-       console.log (position.x + Math.cos( angle ) * stepSize)
-      position.x = position.x + Math.cos(angle) * stepSize;
-      position.y = position.y + Math.sin(angle) * stepSize;
-  
- 
-       }
-   }    
- 
- }
 
 function distance( pt, pt2 ){
  
@@ -178,11 +115,16 @@ function distance( pt, pt2 ){
 }
 
 function mouseDown( event ){
+
+ event.preventDefault();  //   New Code
+
   mouse.down = true;
-  position.x = event.pageX;
-  position.y = event.pageY;
+  position.x = event.pageX || position.touches[0].pageX;
+  position.y = event.pageY || position.touches[0].pageY;
  
   document.getElementById('info').style.display = 'none';
+  document.getElementById('info-mobile').style.display = 'none';
+
 }
 
 function mouseUp( event ){
@@ -204,7 +146,18 @@ function textWidth( string, size ) {
  
  };
 
+ // Button Functions 
+
+ function clearCanvas() {
+  canvas.width = canvas.width;
+}
+
+function handleClearButtonClick(event) {
+  event.preventDefault();
+  
+  clearCanvas();
+}
+
 
 
 init();
-

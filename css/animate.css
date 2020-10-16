@@ -54,10 +54,10 @@ canvas {
 span {
   text-align: center;
   font-family: "Nunito", sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1;
   position: fixed;
-  top: 10%;
+  top: 8%;
   left: 42%;
   color: #3c3431;
   margin-top: -40px;
@@ -70,6 +70,13 @@ span h2 {
   color: #000;
 }
 
+.info-mobile {
+  visibility: hidden;
+}
+#clr-btn {
+  visibility: hidden;
+}
+
 @media screen and (max-width: 877px) {
   span {
     left: 40%;
@@ -79,10 +86,33 @@ span h2 {
   span {
     left: 37%;
   }
-  .logo {
-    left: 35;
+  .logos {
+    /*    left: 35$;*/
+    top: 32%;
+  }
+
+  .info-mobile {
+    visibility: visible;
+    opacity: 0.4;
+  }
+  #clr-btn {
+    visibility: visible;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-left: -34.2px;
+  }
+  #clear-button {
+    font-size: 12px;
+    padding: 5px 15px;
+    margin: 0;
+  }
+
+  #info {
+    visibility: hidden;
   }
 }
+
 @media screen and (max-width: 730px) {
   span {
     left: 35%;
@@ -96,16 +126,35 @@ span h2 {
     width: 200px;
   }
   .logos {
-    top: 30%;
+    top: 35%;
     margin-left: -100px;
   }
   .btn {
     margin-left: unset;
   }
+  #clr-btn {
+    visibility: visible;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-left: -28px;
+  }
 }
 @media screen and (max-width: 600px) {
   span {
     left: 40%;
+  }
+  #clr-btn {
+    top: 35%;
+  }
+}
+
+@media screen and (max-width: 477px) {
+  .logos {
+    top: 40%;
+  }
+  #clr-btn {
+    top: 39%;
   }
 }
 @media screen and (max-width: 460px) {
