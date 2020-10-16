@@ -93,8 +93,16 @@ span h2 {
 
   .info-mobile {
     visibility: visible;
+  }
+
+  .info-mobile h3 {
     opacity: 0.4;
   }
+
+  .info-mobile p {
+    opacity: 0.4;
+  }
+
   #clr-btn {
     visibility: visible;
     position: absolute;
@@ -151,10 +159,10 @@ span h2 {
 
 @media screen and (max-width: 477px) {
   .logos {
-    top: 40%;
+    top: 35%;
   }
   #clr-btn {
-    top: 39%;
+    top: 34%;
   }
 }
 @media screen and (max-width: 460px) {
