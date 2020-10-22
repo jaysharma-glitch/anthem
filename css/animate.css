@@ -53,7 +53,7 @@ span {
   line-height: 1;
   position: absolute;
   width: 80%;
-
+  font-weight: 700;
   top: 8%;
   left: 50%;
   color: #3c3431;
@@ -61,10 +61,11 @@ span {
   margin-left: -40%;
 }
 
-span h4 {
+span #info {
   font-family: "Montserrat", sans-serif;
   opacity: 0.7;
   color: #000;
+  font-weight: 400;
 }
 span h4 label {
   font-family: "Great Vibes", sans-serif;
@@ -156,7 +157,7 @@ span h4 label {
     width: 200px;
   }
   .logos {
-    top: 35%;
+    top: 40%;
     margin-left: -100px;
   }
   .btn {
@@ -165,7 +166,7 @@ span h4 label {
   #clear-button {
     visibility: visible;
     position: absolute;
-    top: 25%;
+    top: 30%;
     left: 50%;
     margin-left: -28px;
   }
