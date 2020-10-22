@@ -807,6 +807,11 @@ input[type="submit"]:hover {
 .contact-content .fa {
   float: left;
 }
+@media screen and (max-width: 1044px) {
+  .contact-info {
+    margin-top: 50px;
+  }
+}
 @media screen and (max-width: 530px) {
   .contact-content i {
     padding-left: 90px;

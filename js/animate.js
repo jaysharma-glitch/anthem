@@ -72,17 +72,29 @@ function draw() {
     var fontSize = minFontSize + d/2;
     var letter = letters[counter];
     var stepSize = textWidth( letter, fontSize );
+  
    
     if (d > stepSize) {
       var angle = Math.atan2(mouse.y-position.y, mouse.x-position.x);
-     
+      var h=0;
+      var s=100;
+      var l=50;
+      var a=255;
+  
+      // Select a fill style
+      context.fillStyle= "#36454f"
       context.font = fontSize + "px Great Vibes";
-   
+      
       context.save();
       context.translate( position.x, position.y);
       context.rotate( angle );
+    
       context.fillText(letter,0,0);
+      
       context.restore();
+     
+     
+
 
       counter++;
       if (counter > letters.length-1) {
