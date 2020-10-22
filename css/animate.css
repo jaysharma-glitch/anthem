@@ -68,10 +68,24 @@ span #info {
   font-weight: 400;
 }
 span h4 label {
-  font-family: "Great Vibes", sans-serif;
+  font-family: "Dancing Script", cursive;
   font-weight: 600;
   font-size: 35px;
-  color: #244c54;
+  background-image: linear-gradient(
+    to left,
+    purple,
+    indigo,
+    blue,
+    green,
+    rgb(148, 126, 0),
+    orange,
+    red
+  );
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  /* -webkit-text-fill-color: transparent;  */
+  /* color: #244c54; */
 }
 
 .info-mobile {
